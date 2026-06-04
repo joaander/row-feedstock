@@ -3,7 +3,7 @@ About row-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/row-feedstock/blob/main/LICENSE.txt)
 
-Home: https://glotzerlab.engin.umich.edu
+Home: https://glotzerlab.engin.umich.edu/
 
 Package license: BSD-3-Clause
 
@@ -18,14 +18,52 @@ Row is a command line tool that helps you manage workflows on HPC resources. Def
 in your **workspace**. **Submit** actions to your cluster's **scheduler**. Row tracks
 which actions have been submitted on which directories so that you don't submit the same
 work twice. Once a job completes, subsequent actions become eligible allowing you to
-process your entire workflow to completion over many submissions.  
-
+process your entire workflow to completion over many submissions.
 
 Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/row-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/row-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22453&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/row-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22453&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/row-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=22453&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/row-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
 </table>
 
 Current release info
