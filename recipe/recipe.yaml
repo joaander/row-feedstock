@@ -1,12 +1,15 @@
-{% set name = "row" %}
-{% set version = "1.0.0" %}
+schema_version: 1
+
+context:
+  name: row
+  version: "1.0.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/glotzerlab/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.zst
+  url: https://github.com/glotzerlab/${{ name }}/releases/download/${{ version }}/${{ name }}-${{ version }}.tar.zst
   sha256: cd791d6b10d31cf1c768c148dd781322a3223833849809f1e45b2f13c2be95a5
 
 build:
@@ -18,22 +21,24 @@ build:
 
 requirements:
   build:
-    - {{ compiler('rust') }}
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
     - cargo-bundle-licenses
   host:
   run:
 
-test:
-  commands:
+tests:
+  - script:
     - row --version
+  - script:
     - row show cluster
+  - script:
     - row show launchers
 
 about:
-  home: https://glotzerlab.engin.umich.edu
-  summary: 'Row is a command line tool that helps you manage workflows on HPC resources.'
+  homepage: https://glotzerlab.engin.umich.edu
+  summary: Row is a command line tool that helps you manage workflows on HPC resources.
   description: |
     Row is a command line tool that helps you manage workflows on HPC resources. Define
     **actions** in a workflow configuration file that apply to **groups** of **directories**
@@ -45,8 +50,8 @@ about:
   license_file:
     - LICENSE
     - THIRDPARTY.yml
-  doc_url: https://row.readthedocs.io/
-  dev_url: https://github.com/glotzerlab/row
+  documentation: https://row.readthedocs.io/
+  repository: https://github.com/glotzerlab/row
 
 extra:
   recipe-maintainers:
